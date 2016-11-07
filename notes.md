@@ -42,7 +42,7 @@ ex. `String.capitalize name`
 **Types (with examples)**
 
 1. Value
-  * Arbitrary-sized integers: decimal (1234), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
+  * Arbitrary-sized integers: decimal (`1234`{.elixir}), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
   * Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
   * Atoms: :fred, :is\_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
   * Ranges: start..end (1..5, 123..156)
@@ -114,9 +114,9 @@ iex> Enum.map list, fn elem -> elem > 6 end
 **& Notation**
 
 ```elixir
-iex> add\_one = &(&1 + 1) # same as add\_one = fn (n) -> n + 1 end
+iex> add_one = &(&1 + 1) # same as add_one = fn (n) -> n + 1 end
 #Function<6.17052888 in :erl_eval.expr/5>
-iex> add\_one.(44)
+iex> add_one.(44)
 45
 ```
 
@@ -131,7 +131,7 @@ def greet(greeting, name), do: (
 
 …and as a one-liner, with the Module definition
 
-```
+```elixir
 defmodule Times do
   def double(n), do: n * 2
 end
@@ -139,7 +139,7 @@ end
 
 **Clauses — Elixir matches against the parameter to determine which one to use**
 
-```
+```elixir
 defmodule Factorial do
   def of(0), do: 1
   def of(n), do: n * of(n-1)
@@ -149,7 +149,7 @@ end
 **Guard clauses — `when`**
 (in this example, negative numbers as parameters will produce a useful error)
 
-```
+```elixir
 defmodule Factorial do
   def of(0), do: 1
   def of(n) when n > 0 do
@@ -160,7 +160,7 @@ end
 
 **Default parameters — `\\`**
 
-```
+```elixir
 defmodule Example do
   def func(p1, p2 \\ 2, p3 \\ 3, p4) do
     IO.inspect [p1, p2, p3, p4]
