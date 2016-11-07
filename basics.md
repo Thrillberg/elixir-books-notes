@@ -1,4 +1,24 @@
-**Pattern matching**
+[Pattern Matching](#pattern-matching)
+[Pin Operator](#pin-operator)
+[List](#list)
+[Module Syntax](#module-syntax)
+[Types](#types)
+[Difference Between Keyword Lists and Maps](#keyword-and-maps)
+[Join Operators](#join-operators)
+[`In` Operator](#in-operator)
+[Anonymous Functions](#anonymous-functions)
+[Passing Functions](#passing-functions)
+[`&` Notation](#&-notation)
+[Functions within a Module](#funtions-within-a-module)
+[Clauses](#clauses)
+[Guard clauses](#guard-clauses)
+[Default parameters](#default-parameters)
+[Private Functions](#private-functions)
+[Pipe Operator](#pipe-operator)
+[Module attributes](#module-attributes)
+
+# Pattern Matching
+
 ```elixir
 iex>list = [1, 2, 3]
 [1, 2, 3]
@@ -18,7 +38,7 @@ iex>[1, _, _] = [1, "cat", "dog"]
 [1, "cat", "dog"]
 ```
 
-**Pin operator (^)**
+# Pin operator (^)
 ```elixir
 iex>a = 1
 1
@@ -28,7 +48,7 @@ iex>^a = 1
 **(MatchError) no match of right hand side value: 1
 ```
 
-**List — [ head | tail  ]**
+# List — [ head | tail  ]
 ```elixir
 iex> list1 = [ 3, 2, 1  ]
 [3, 2, 1]
@@ -36,11 +56,11 @@ iex> list2 = [ 4 | list1  ]
 [4, 3, 2, 1]
 ```
 
-**Module.function(parameter)**
+[Module.function(parameter)]
 
 ex. `String.capitalize name`
 
-**Types (with examples)**
+[Types (with examples)]
 
 1. Value
   * Arbitrary-sized integers: decimal (`1234`), hexadecimal (`0xcafe`), octal (`0o765`), and binary (`0b1010`) — also with underscores (`1_000_000`)
@@ -69,7 +89,10 @@ iex> states["TX"]
 nil
 ```
 
-**DIFFERENCE BETWEEN KEYWORD LIST AND MAP**: Maps allow only one entry for a particular key, whereas keyword lists allow the key to be repeated.
+# Difference Between Keyword Lists and Maps
+
+Maps allow only one entry for a particular key, whereas keyword lists allow the key to be repeated.
+
 How to Choose Between Maps and Keyword Lists:
 * If you want to pattern-match against the contents.
   Map.
@@ -82,17 +105,17 @@ How to Choose Between Maps and Keyword Lists:
 
 * Binaries: Ignore for now.
 
-**Join Operators**
+# Join Operators
 
 `list1 ++ list2 # concatenates two lists`
 
 `list1 -- list2 # returns elements in list1 not in list2`
 
-**“In" Operator**
+# `In` Operator
 
 `a in enum # tests if a is included in enum (for example, a list or a range)`
 
-**Anonymous Function**
+# Anonymous Functions
 
 ```elixir
 fn
@@ -110,7 +133,7 @@ iex> sum.(1, 2)
 3
 ```
 
-**Passing Functions (`map` takes a function as an argument)**
+# Passing Functions (`map` takes a function as an argument)
 
 ```elixir
 iex> list = [1, 3, 5, 7, 9]
@@ -123,7 +146,7 @@ iex> Enum.map list, fn elem -> elem > 6 end
 [false, false, false, true, true]
 ```
 
-**& Notation**
+# `&` Notation
 
 ```elixir
 iex> add_one = &(&1 + 1) # same as add_one = fn (n) -> n + 1 end
@@ -132,7 +155,7 @@ iex> add_one.(44)
 45
 ```
 
-**Functions within a Module**
+# Functions within a Module
 
 ```elixir
 def greet(greeting, name), do: (
@@ -149,7 +172,9 @@ defmodule Times do
 end
 ```
 
-**Clauses — Elixir matches against the parameter to determine which one to use**
+# Clauses
+
+Elixir matches against the parameter to determine which one to use
 
 ```elixir
 defmodule Factorial do
@@ -158,7 +183,10 @@ defmodule Factorial do
 end
 ```
 
-**Guard clauses — `when`**
+# Guard clauses
+
+`when`
+
 (in this example, negative numbers as parameters will produce a useful error)
 
 ```elixir
@@ -170,7 +198,9 @@ n * of(n-1)
 end
 ```
 
-**Default parameters — `\\`**
+# Default parameters
+
+`\\`
 
 ```elixir
 defmodule Example do
@@ -180,16 +210,18 @@ defmodule Example do
 end
 ```
 
-**Private Functions**
+# Private Functions
 
 Just use `defp`, very common for recursion clauses.
 
-**Pipe Operator (`|>`)**
+# Pipe Operator (`|>`)
 
 Do I even have to review this? It’s so cool.
 
 Modules provide namespaces/wrappers
 
-**Module attributes — prefix the key with `@`**
+# Module attributes
+
+prefix the key with `@`
 
 `@name value`
