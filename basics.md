@@ -1,20 +1,37 @@
 [Pattern Matching](#pattern-matching)
+
 [Pin Operator](#pin-operator)
+
 [List](#list)
+
 [Module Syntax](#module-syntax)
+
 [Types](#types)
+
 [Difference Between Keyword Lists and Maps](#keyword-and-maps)
+
 [Join Operators](#join-operators)
+
 [`In` Operator](#in-operator)
+
 [Anonymous Functions](#anonymous-functions)
+
 [Passing Functions](#passing-functions)
+
 [`&` Notation](#&-notation)
-[Functions within a Module](#funtions-within-a-module)
+
+[Functions within a Module](#functions-within-a-module)
+
 [Clauses](#clauses)
+
 [Guard clauses](#guard-clauses)
+
 [Default parameters](#default-parameters)
+
 [Private Functions](#private-functions)
+
 [Pipe Operator](#pipe-operator)
+
 [Module attributes](#module-attributes)
 
 # Pattern Matching
@@ -38,7 +55,10 @@ iex>[1, _, _] = [1, "cat", "dog"]
 [1, "cat", "dog"]
 ```
 
-# Pin operator (^)
+# Pin operator
+
+(^)
+
 ```elixir
 iex>a = 1
 1
@@ -48,7 +68,10 @@ iex>^a = 1
 **(MatchError) no match of right hand side value: 1
 ```
 
-# List — [ head | tail  ]
+# List
+
+[ head | tail  ]
+
 ```elixir
 iex> list1 = [ 3, 2, 1  ]
 [3, 2, 1]
@@ -111,7 +134,7 @@ How to Choose Between Maps and Keyword Lists:
 
 `list1 -- list2 # returns elements in list1 not in list2`
 
-# `In` Operator
+# In Operator
 
 `a in enum # tests if a is included in enum (for example, a list or a range)`
 
@@ -133,7 +156,9 @@ iex> sum.(1, 2)
 3
 ```
 
-# Passing Functions (`map` takes a function as an argument)
+# Passing Functions
+
+(`map` takes a function as an argument)
 
 ```elixir
 iex> list = [1, 3, 5, 7, 9]
@@ -146,7 +171,7 @@ iex> Enum.map list, fn elem -> elem > 6 end
 [false, false, false, true, true]
 ```
 
-# `&` Notation
+# & Notation
 
 ```elixir
 iex> add_one = &(&1 + 1) # same as add_one = fn (n) -> n + 1 end
@@ -214,7 +239,9 @@ end
 
 Just use `defp`, very common for recursion clauses.
 
-# Pipe Operator (`|>`)
+# Pipe Operator
+
+(`|>`)
 
 Do I even have to review this? It’s so cool.
 
