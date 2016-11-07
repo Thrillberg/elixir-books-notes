@@ -28,52 +28,49 @@ iex>^a = 1
 **(MatchError) no match of right hand side value: 1
 ```
 
-List — [ head | tail  ]
+**List — [ head | tail  ]**
+```
 iex> list1 = [ 3, 2, 1  ]
-
 [3, 2, 1]
-
 iex> list2 = [ 4 | list1  ]
-
 [4, 3, 2, 1]
+```
 
-Module.function(parameter)
+**Module.function(parameter)**
 ex. `String.capitalize name`
 
-Types (with examples)
-     Value
-          Arbitrary-sized integers: decimal (1234), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1_000_000)
-          Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
-          Atoms: :fred, :is_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
-Ranges: start..end (1..5, 123..156)
-Regular expressions: Look it up, but remember to use the Regex module
+**Types (with examples)**
+1. Value
+⋅⋅* Arbitrary-sized integers: decimal (1234), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
+⋅⋅* Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
+⋅⋅* Atoms: :fred, :is_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
+⋅⋅* Ranges: start..end (1..5, 123..156)
+⋅⋅* Regular expressions: Look it up, but remember to use the Regex module
 
-     System
-          PIDs and ports: PID is reference to a local or remote process and port is reference to a resource that you’ll be reading or writing.
-          References: Ignore for now.
+2. System
+⋅⋅* PIDs and ports: PID is reference to a local or remote process and port is reference to a resource that you’ll be reading or writing.
+⋅⋅* References: Ignore for now.
 
-     Collection
-          Tuples: Ordered collection of values, usually only 2 to 4 per tuple ({ 1, 2  }, { :ok, 42, "next”  }, { :error, :enoent  })
-          Lists: a linked data structure, cheap to get the head and extract the tail (but not to access in random order), see above for example
-               Keyword Lists: Elixir converts key/value pairs in a list into tuples ([ name: "Dave", city: "Dallas", likes: "Programming”  ] becomes [ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ])
-          Maps: a collection of key/value pairs (%{ key => value, key => value  }, %{ { :error, :enoent  } => :fatal, { :error, :busy  } => :retry  })
-               Accessing a map: Like a Ruby hash. Also, if the keys are atoms (:key), you can use dot notation (var.key).
+3. Collection
+⋅⋅* Tuples: Ordered collection of values, usually only 2 to 4 per tuple ({ 1, 2  }, { :ok, 42, "next”  }, { :error, :enoent  })
+⋅⋅* Lists: a linked data structure, cheap to get the head and extract the tail (but not to access in random order), see above for example
+⋅⋅* Keyword Lists: Elixir converts key/value pairs in a list into tuples ([ name: "Dave", city: "Dallas", likes: "Programming”  ] becomes [ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ])
+⋅⋅* Maps: a collection of key/value pairs (%{ key => value, key => value  }, %{ { :error, :enoent  } => :fatal, { :error, :busy  } => :retry  })
+⋅⋅* Accessing a map: Like a Ruby hash. Also, if the keys are atoms (:key), you can use dot notation (var.key).
+
+```
 iex> states = %{ "AL" => "Alabama", "WI" => "Wisconsin" }
-
 %{"AL" => "Alabama", "WI" => "Wisconsin"}
-
 iex> states["AL"]
-
 "Alabama"
-
 iex> states["TX"]
-
 nil
+```
 
-          DIFFERENCE BETWEEN KEYWORD LIST AND MAP: Maps allow only one entry for a particular key, whereas keyword lists allow the key to be repeated.
-          Binaries: Ignore for now.
+**DIFFERENCE BETWEEN KEYWORD LIST AND MAP**: Maps allow only one entry for a particular key, whereas keyword lists allow the key to be repeated.
+* Binaries: Ignore for now.
 
-Join Operators
+**Join Operators**
 list1 ++ list2 # concatenates two lists
 
 list1 -- list2 # returns elements in list1 not in list2
