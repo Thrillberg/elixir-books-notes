@@ -62,11 +62,13 @@ iex> list2 = [ 4 | list1  ]
 [4, 3, 2, 1]
 ```
 
-[Module.function(parameter)]
+# Module Syntax
+
+Module.function(parameter)
 
 ex. `String.capitalize name`
 
-[Types (with examples)]
+# Types
 
 1. Value
   * Arbitrary-sized integers: decimal (`1234`), hexadecimal (`0xcafe`), octal (`0o765`), and binary (`0b1010`) — also with underscores (`1_000_000`)
