@@ -72,14 +72,17 @@ nil
 * Binaries: Ignore for now.
 
 **Join Operators**
+
 `list1 ++ list2 # concatenates two lists`
 
 `list1 -- list2 # returns elements in list1 not in list2`
 
 **“In" Operator**
+
 `a in enum # tests if a is included in enum (for example, a list or a range)`
 
 **Anonymous Function**
+
 ```elixir
 parameter-list -> body ... fn
   parameter-list -> body
@@ -96,6 +99,7 @@ iex> sum.(1, 2)
 ```
 
 **Passing Functions (`map` takes a function as an argument)**
+
 ```elixir
 iex> list = [1, 3, 5, 7, 9]
 [1, 3, 5, 7, 9]
@@ -108,6 +112,7 @@ iex> Enum.map list, fn elem -> elem > 6 end
 ```
 
 **& Notation**
+
 ```elixir
 iex> add\_one = &(&1 + 1) # same as add\_one = fn (n) -> n + 1 end
 #Function<6.17052888 in :erl_eval.expr/5>
@@ -116,6 +121,7 @@ iex> add\_one.(44)
 ```
 
 **Functions within a Module**
+
 ```elixir
 def greet(greeting, name), do: (
   IO.puts greeting
@@ -124,61 +130,53 @@ def greet(greeting, name), do: (
 ```
 
 …and as a one-liner, with the Module definition
+
+```
 defmodule Times do
-
-def double(n), do: n * 2
-
+  def double(n), do: n * 2
 end
+```
 
-Clauses — Elixir matches against the parameter to determine which one to use
+**Clauses — Elixir matches against the parameter to determine which one to use**
 
+```
 defmodule Factorial do
-
- def of(0), do: 1
-
- def of(n), do: n * of(n-1)
-
+  def of(0), do: 1
+  def of(n), do: n * of(n-1)
 end
+```
 
-Guard clauses — `when`
+**Guard clauses — `when`**
 (in this example, negative numbers as parameters will produce a useful error)
 
- def of(0), do: 1
-
- def of(n) when n > 0 do
-
- n * of(n-1)
-
- end
-
-end
-
+```
 defmodule Factorial do
-
-Default parameters — `\\`
-
- def func(p1, p2 \\ 2, p3 \\ 3, p4) do
-
- IO.inspect [p1, p2, p3, p4]
-
- end
-
+  def of(0), do: 1
+  def of(n) when n > 0 do
+n * of(n-1)
+  end
 end
+```
 
+**Default parameters — `\\`**
+
+```
 defmodule Example do
+  def func(p1, p2 \\ 2, p3 \\ 3, p4) do
+    IO.inspect [p1, p2, p3, p4]
+  end
+end
+```
 
-Private Functions
+**Private Functions**
+
 Just use `defp`, very common for recursion clauses.
 
-Pipe Operator (|>)
+**Pipe Operator (`|>`)**
+
 Do I even have to review this? It’s so cool.
 
 Modules provide namespaces/wrappers
 
-Module attributes — prefix the key with `@`
-@name value
-
-
-
-`"
-" }"
+**Module attributes — prefix the key with `@`**
+`@name value`
