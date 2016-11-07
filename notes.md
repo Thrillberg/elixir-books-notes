@@ -42,10 +42,10 @@ ex. `String.capitalize name`
 **Types (with examples)**
 
 1. Value
-  * Arbitrary-sized integers: decimal (`1234`{.elixir}), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
-  * Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
-  * Atoms: :fred, :is\_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
-  * Ranges: start..end (1..5, 123..156)
+  * Arbitrary-sized integers: decimal (`1234`), hexadecimal (`0xcafe`), octal (`0o765`), and binary (`0b1010`) — also with underscores (`1_000_000`)
+  * Floating-point numbers: `1.0`, `0.2456`, `0.314159e1`, and `314159.0e-5`
+  * Atoms: `:fred`, `:is_binary?`, `:var@2`, `:<>`, `:===`, `:"func/3”`, and `:"long john silver"`
+  * Ranges: `start..end` (`1..5`, `123..156`)
   * Regular expressions: Look it up, but remember to use the Regex module
 
 2. System
@@ -53,11 +53,11 @@ ex. `String.capitalize name`
   * References: Ignore for now.
 
 3. Collection
-  * Tuples: Ordered collection of values, usually only 2 to 4 per tuple ({ 1, 2  }, { :ok, 42, "next”  }, { :error, :enoent  })
+  * Tuples: Ordered collection of values, usually only 2 to 4 per tuple (`{ 1, 2  }`, `{ :ok, 42, "next”  }`, `{ :error, :enoent  }`)
   * Lists: a linked data structure, cheap to get the head and extract the tail (but not to access in random order), see above for example
-  * Keyword Lists: Elixir converts key/value pairs in a list into tuples ([ name: "Dave", city: "Dallas", likes: "Programming”  ] becomes [ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ])
-  * Maps: a collection of key/value pairs (%{ key => value, key => value  }, %{ { :error, :enoent  } => :fatal, { :error, :busy  } => :retry  })
-  * Accessing a map: Like a Ruby hash. Also, if the keys are atoms (:key), you can use dot notation (var.key).
+  * Keyword Lists: Elixir converts key/value pairs in a list into tuples (`[ name: "Dave", city: "Dallas", likes: "Programming”  ]` becomes `[ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ]`)
+  * Maps: a collection of key/value pairs (`%{ key => value, key => value  }`, `%{ { :error, :enoent  } => :fatal`, `{ :error, :busy  } => :retry  }`)
+  * Accessing a map: Like a Ruby hash. Also, if the keys are atoms (`:key`), you can use dot notation (`var.key`).
 
 ```elixir
 iex> states = %{ "AL" => "Alabama", "WI" => "Wisconsin" }
