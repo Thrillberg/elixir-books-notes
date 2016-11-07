@@ -41,22 +41,22 @@ ex. `String.capitalize name`
 
 **Types (with examples)**
 1. Value
-⋅⋅* Arbitrary-sized integers: decimal (1234), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
-⋅⋅* Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
-⋅⋅* Atoms: :fred, :is_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
-⋅⋅* Ranges: start..end (1..5, 123..156)
-⋅⋅* Regular expressions: Look it up, but remember to use the Regex module
+* Arbitrary-sized integers: decimal (1234), hexadecimal (0xcafe), octal (0o765), and binary (0b1010) — also with underscores (1\_000\_000)
+* Floating-point numbers: 1.0, 0.2456, 0.314159e1, and 314159.0e-5
+* Atoms: :fred, :is\_binary?, :var@2, :<>, :===, :"func/3”, and :"long john silver"
+* Ranges: start..end (1..5, 123..156)
+* Regular expressions: Look it up, but remember to use the Regex module
 
 2. System
-⋅⋅* PIDs and ports: PID is reference to a local or remote process and port is reference to a resource that you’ll be reading or writing.
-⋅⋅* References: Ignore for now.
+* PIDs and ports: PID is reference to a local or remote process and port is reference to a resource that you’ll be reading or writing.
+* References: Ignore for now.
 
 3. Collection
-⋅⋅* Tuples: Ordered collection of values, usually only 2 to 4 per tuple ({ 1, 2  }, { :ok, 42, "next”  }, { :error, :enoent  })
-⋅⋅* Lists: a linked data structure, cheap to get the head and extract the tail (but not to access in random order), see above for example
-⋅⋅* Keyword Lists: Elixir converts key/value pairs in a list into tuples ([ name: "Dave", city: "Dallas", likes: "Programming”  ] becomes [ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ])
-⋅⋅* Maps: a collection of key/value pairs (%{ key => value, key => value  }, %{ { :error, :enoent  } => :fatal, { :error, :busy  } => :retry  })
-⋅⋅* Accessing a map: Like a Ruby hash. Also, if the keys are atoms (:key), you can use dot notation (var.key).
+* Tuples: Ordered collection of values, usually only 2 to 4 per tuple ({ 1, 2  }, { :ok, 42, "next”  }, { :error, :enoent  })
+* Lists: a linked data structure, cheap to get the head and extract the tail (but not to access in random order), see above for example
+* Keyword Lists: Elixir converts key/value pairs in a list into tuples ([ name: "Dave", city: "Dallas", likes: "Programming”  ] becomes [ {:name, "Dave"}, {:city, "Dallas"}, {:likes, "Programming"}  ])
+* Maps: a collection of key/value pairs (%{ key => value, key => value  }, %{ { :error, :enoent  } => :fatal, { :error, :busy  } => :retry  })
+* Accessing a map: Like a Ruby hash. Also, if the keys are atoms (:key), you can use dot notation (var.key).
 
 ```
 iex> states = %{ "AL" => "Alabama", "WI" => "Wisconsin" }
@@ -71,76 +71,56 @@ nil
 * Binaries: Ignore for now.
 
 **Join Operators**
-list1 ++ list2 # concatenates two lists
+`list1 ++ list2 # concatenates two lists`
 
-list1 -- list2 # returns elements in list1 not in list2
+`list1 -- list2 # returns elements in list1 not in list2`
 
-“In" Operator
-a in enum # tests if a is included in enum (for example,
+**“In" Operator**
+`a in enum # tests if a is included in enum (for example, a list or a range)`
 
-# a list or a range)
-
-Anonymous Function
-parameter-list -> body ...
-
-
-
-fn
-
-
-
-parameter-list -> body
-
-
-
+**Anonymous Function**
+```
+parameter-list -> body ... fn
+  parameter-list -> body
 end
+```
 
 Can take multiple arguments, in order.
 
+```
 iex> sum = fn (a, b) -> a + b end
-
 #Function<12.17052888 in :erl_eval.expr/5>
-
 iex> sum.(1, 2)
-
 3
+```
 
-Passing Functions (`map` takes a function as an argument)
+**Passing Functions (`map` takes a function as an argument)**
+```
 iex> list = [1, 3, 5, 7, 9]
-
 [1, 3, 5, 7, 9]
-
 iex> Enum.map list, fn elem -> elem * 2 end
-
 [2, 6, 10, 14, 18]
-
 iex> Enum.map list, fn elem -> elem * elem end
-
 [1, 9, 25, 49, 81]
-
 iex> Enum.map list, fn elem -> elem > 6 end
-
 [false, false, false, true, true]
+```
 
-& Notation
-iex> add_one = &(&1 + 1) # same as add_one = fn (n) -> n + 1 end
-
+**& Notation**
+```
+iex> add\_one = &(&1 + 1) # same as add\_one = fn (n) -> n + 1 end
 #Function<6.17052888 in :erl_eval.expr/5>
-
-iex> add_one.(44)
-
+iex> add\_one.(44)
 45
+```
 
-Functions within a Module
-
+**Functions within a Module**
+```
 def greet(greeting, name), do: (
-
-IO.puts greeting
-
-IO.puts "How're you doing, #{name}?"
-
-
-    )
+  IO.puts greeting
+  IO.puts "How're you doing, #{name}?"
+)
+```
 
 …and as a one-liner, with the Module definition
 defmodule Times do
