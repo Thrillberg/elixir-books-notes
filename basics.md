@@ -1,38 +1,21 @@
-[Pattern Matching](#pattern-matching)
-
-[Pin Operator](#pin-operator)
-
-[List](#list)
-
-[Module Syntax](#module-syntax)
-
-[Types](#types)
-
-[Difference Between Keyword Lists and Maps](#keyword-and-maps)
-
-[Join Operators](#join-operators)
-
-[`In` Operator](#in-operator)
-
-[Anonymous Functions](#anonymous-functions)
-
-[Passing Functions](#passing-functions)
-
-[`&` Notation](#&-notation)
-
-[Functions within a Module](#functions-within-a-module)
-
-[Clauses](#clauses)
-
-[Guard clauses](#guard-clauses)
-
-[Default parameters](#default-parameters)
-
-[Private Functions](#private-functions)
-
-[Pipe Operator](#pipe-operator)
-
-[Module attributes](#module-attributes)
+1. [Pattern Matching](#pattern-matching)
+2. [Pin Operator](#pin-operator)
+3. [List](#list)
+4. [Module Syntax](#module-syntax)
+5. [Types](#types)
+6. [Difference Between Keyword Lists and Maps](#difference-between-keyword-lists-and-maps)
+7. [Join Operators](#join-operators)
+8. [In Operator](#in-operator)
+9. [Anonymous Functions](#anonymous-functions)
+10. [Passing Functions](#passing-functions)
+11. [& Notation](#&-notation)
+12. [Functions within a Module](#functions-within-a-module)
+13. [Clauses](#clauses)
+14. [Guard clauses](#guard-clauses)
+15. [Default parameters](#default-parameters)
+16. [Private Functions](#private-functions)
+17. [Pipe Operator](#pipe-operator)
+18. [Module attributes](#module-attributes)
 
 # Pattern Matching
 
